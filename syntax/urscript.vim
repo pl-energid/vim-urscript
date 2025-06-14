@@ -89,9 +89,9 @@ hi def link urscriptKeywords    Keyword
 hi def link urscriptOperators   Operator
 hi def link urscriptIdentifier  Identifier
 
-hi def link urscriptLabelProperty String
-hi def link urscriptLabelText     String
-hi def link urscriptLabelNumber   Number
+hi def link urscriptLabelProperty PreProc
+hi def link urscriptLabelText     PreProc
+hi def link urscriptLabelNumber   PreProc
 hi def link urscriptLabel         PreProc
 
 hi def link urscriptStruct      Structure
