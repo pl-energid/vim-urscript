@@ -47,6 +47,9 @@ syn match  urscriptLabelNumber     "\d\+"     contained nextgroup=urscriptLabelT
 syn match  urscriptLabel           "^[$]"     nextgroup=urscriptLabelNumber skipwhite
 syn match  urscriptLabelError      "^\s\+[$]" nextgroup=urscriptLabelNumber skipwhite
 
+" Structure definition.
+syn keyword urscriptStruct struct
+
 " Pose definition.
 syn match urscriptPose "\<p\ze\["
 
@@ -91,6 +94,7 @@ hi def link urscriptLabelNumber Number
 hi def link urscriptLabel       PreProc
 hi def link urscriptLabelError  Error
 
+hi def link urscriptStruct      Structure
 hi def link urscriptPose        Structure
 hi def link urscriptNone        Constant
 hi def link urscriptString      String
