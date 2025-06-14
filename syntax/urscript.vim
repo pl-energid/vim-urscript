@@ -42,7 +42,8 @@ syn keyword urscriptKeywords def thread nextgroup=urscriptIdentifier skipwhite
 syn keyword urscriptOperators or and xor not
 
 " Program labels.
-syn region urscriptLabelText      start="\"" skip="\\" end="\""  contained
+syn region urscriptLabelProperty  start="\"" skip="\\" end="\""  contained
+syn region urscriptLabelText      start="\"" skip="\\" end="\""  contained nextgroup=urscriptLabelProperty skipwhite
 syn match  urscriptLabelNumber     "\d\+"     contained nextgroup=urscriptLabelText skipwhite
 syn match  urscriptLabel           "^\s*[$]"  nextgroup=urscriptLabelNumber skipwhite
 
@@ -88,9 +89,10 @@ hi def link urscriptKeywords    Keyword
 hi def link urscriptOperators   Operator
 hi def link urscriptIdentifier  Identifier
 
-hi def link urscriptLabelText   String
-hi def link urscriptLabelNumber Number
-hi def link urscriptLabel       PreProc
+hi def link urscriptLabelProperty String
+hi def link urscriptLabelText     String
+hi def link urscriptLabelNumber   Number
+hi def link urscriptLabel         PreProc
 
 hi def link urscriptStruct      Structure
 hi def link urscriptPose        Structure
