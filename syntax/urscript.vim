@@ -44,8 +44,7 @@ syn keyword urscriptOperators or and xor not
 " Program labels.
 syn region urscriptLabelText      start="\"" skip="\\" end="\""  contained
 syn match  urscriptLabelNumber     "\d\+"     contained nextgroup=urscriptLabelText skipwhite
-syn match  urscriptLabel           "^[$]"     nextgroup=urscriptLabelNumber skipwhite
-syn match  urscriptLabelError      "^\s\+[$]" nextgroup=urscriptLabelNumber skipwhite
+syn match  urscriptLabel           "^\s*[$]"  nextgroup=urscriptLabelNumber skipwhite
 
 " Structure definition.
 syn keyword urscriptStruct struct
@@ -92,7 +91,6 @@ hi def link urscriptIdentifier  Identifier
 hi def link urscriptLabelText   String
 hi def link urscriptLabelNumber Number
 hi def link urscriptLabel       PreProc
-hi def link urscriptLabelError  Error
 
 hi def link urscriptStruct      Structure
 hi def link urscriptPose        Structure

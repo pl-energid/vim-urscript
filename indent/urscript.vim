@@ -39,18 +39,13 @@ function GetURScriptIndent(lnum)
 	while prev_lnum >= a:lnum - 50 && prev_lnum >= 0
 		let prev_lnum = prevnonblank(prev_lnum - 1)
 		let prev_line = getline(prev_lnum)
-		if prev_line !~ '^\$'
+		if prev_line !~ '^\s*\$'
 			break
 		endif
 	endwhile
 
 	let prev_indent = indent(prev_lnum)
 	let line        = getline(a:lnum)
-
-	" Program labels may not be indented.
-	if line =~ '^\s*\$'
-		return 0
-	endif
 
 	" If this is the first line, use 0 indent.
 	if prev_lnum == 0
