@@ -61,7 +61,7 @@ function GetURScriptIndent(lnum)
 	let add_indent = 0
 
 	" Indent after lines ending in colon.
-	if prev_line =~ ':\s*$'
+	if prev_line =~ '^[^#]*:\s*\%(#.*\)\?$'
 		let add_indent = add_indent + shiftwidth()
 	endif
 
